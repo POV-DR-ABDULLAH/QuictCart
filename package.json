@@ -2,7 +2,7 @@
   "name": "ecommerce-inngest",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/POV-DR-ABDULLAH/QuictCart.git",
+  "homepage": "https://github.com/POV-DR-ABDULLAH/QuictCart",
 
   "scripts": {
     "dev": "next dev --turbopack",
