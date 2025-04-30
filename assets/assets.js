@@ -152,7 +152,7 @@ export const productsDummyData = [
     "_id": "67a1f52e3f34a77b6dde914a",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
     "name": "Bose QuietComfort 45",
-    "description": "The Bose QuietComfort 45 headphones are engineered for exceptional sound quality and unparalleled noise cancellation. With a 24-hour battery life and comfortable, lightweight design, these headphones deliver premium audio for any environment. Whether on a flight, in the office, or at home, the Bose QC45 blocks out distractions, offering an immersive listening experience.",
+    "description": "Headphone Bose QuietComfort 45 dirancang untuk kualitas suara yang luar biasa dan peredam bising yang tak tertandingi. Dengan daya tahan baterai 24 jam dan desain yang nyaman dan ringan, headphone ini menghadirkan audio premium untuk lingkungan apa pun. Baik saat dalam penerbangan, di kantor, atau di rumah, Bose QC45 memblokir gangguan, menawarkan pengalaman mendengarkan yang mendalam.",
     "price": 429.99,
     "offerPrice": 329.99,
     "image": [
@@ -166,7 +166,7 @@ export const productsDummyData = [
     "_id": "67a1f5663f34a77b6dde914c",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
     "name": "Samsung Galaxy S23",
-    "description": "The Samsung Galaxy S23 offers an all-encompassing mobile experience with its advanced AMOLED display, offering vibrant visuals and smooth interactions. Equipped with top-of-the-line fitness tracking features and cutting-edge technology, this phone delivers outstanding performance. With powerful hardware, a sleek design, and long battery life, the S23 is perfect for those who demand the best in mobile innovation.",
+    "description": "Samsung Galaxy S23 menawarkan pengalaman seluler yang menyeluruh dengan layar AMOLED canggihnya, yang menawarkan visual yang hidup dan interaksi yang lancar. Dilengkapi dengan fitur pelacakan kebugaran terbaik dan teknologi mutakhir, ponsel ini memberikan kinerja yang luar biasa. Dengan perangkat keras yang tangguh, desain yang ramping, dan masa pakai baterai yang lama, S23 sangat cocok bagi mereka yang menginginkan inovasi seluler terbaik..",
     "price": 899.99,
     "offerPrice": 799.99,
     "image": [
@@ -180,7 +180,7 @@ export const productsDummyData = [
     "_id": "67a1f5993f34a77b6dde914e",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
     "name": "Garmin Venu 2",
-    "description": "The Garmin Venu 2 smartwatch blends advanced fitness tracking with sophisticated design, offering a wealth of features such as heart rate monitoring, GPS, and sleep tracking. Built with a 24-hour battery life, this watch is ideal for fitness enthusiasts and anyone looking to enhance their daily lifestyle. With a stunning AMOLED display and customizable watch faces, the Venu 2 combines technology with style seamlessly.",
+    "description": "Jam tangan pintar Garmin Venu 2 memadukan pelacakan kebugaran canggih dengan desain yang canggih, menawarkan banyak fitur seperti pemantauan detak jantung, GPS, dan pelacakan tidur. Dibuat dengan daya tahan baterai 24 jam, jam tangan ini ideal bagi penggemar kebugaran dan siapa pun yang ingin meningkatkan gaya hidup sehari-hari mereka. Dengan layar AMOLED yang memukau dan tampilan jam yang dapat disesuaikan, Venu 2 memadukan teknologi dengan gaya secara sempurna.",
     "price": 399.99,
     "offerPrice": 349.99,
     "image": [
@@ -194,7 +194,7 @@ export const productsDummyData = [
     "_id": "67a1f5ef3f34a77b6dde9150",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
     "name": "PlayStation 5",
-    "description": "The PlayStation 5 takes gaming to the next level with ultra-HD graphics, a powerful 825GB SSD, and ray tracing technology for realistic visuals. Whether you're into high-action games or immersive storytelling, the PS5 delivers fast loading times, seamless gameplay, and stunning visuals. It's a must-have for any serious gamer looking for the ultimate gaming experience.",
+    "description": "PlayStation 5 membawa permainan ke level berikutnya dengan grafis ultra-HD, SSD 825GB yang tangguh, dan teknologi ray tracing untuk visual yang realistis. Baik Anda menyukai permainan aksi tinggi atau cerita yang mendalam, PS5 menghadirkan waktu pemuatan yang cepat, permainan yang lancar, dan visual yang memukau. Perangkat ini wajib dimiliki oleh setiap gamer serius yang mencari pengalaman bermain terbaik.",
     "price": 599.99,
     "offerPrice": 499.99,
     "image": [
@@ -208,7 +208,7 @@ export const productsDummyData = [
     "_id": "67a1f70c3f34a77b6dde9156",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
     "name": "Canon EOS R5",
-    "description": "The Canon EOS R5 is a game-changing mirrorless camera with a 45MP full-frame sensor, offering ultra-high resolution and the ability to shoot 8K video. Whether you're capturing professional-quality stills or cinematic video footage, this camera delivers exceptional clarity, speed, and color accuracy. With advanced autofocus and in-body stabilization, the R5 is ideal for photographers and videographers alike.",
+    "description": "Canon EOS R5 adalah kamera mirrorless yang mengubah permainan dengan sensor full-frame 45MP, menawarkan resolusi sangat tinggi dan kemampuan untuk merekam video 8K. Baik Anda mengambil gambar diam berkualitas profesional atau rekaman video sinematik, kamera ini memberikan kejernihan, kecepatan, dan akurasi warna yang luar biasa. Dengan autofokus canggih dan stabilisasi dalam bodi, R5 sangat ideal untuk fotografer dan videografer.",
     "price": 4199.99,
     "offerPrice": 3899.99,
     "image": [
@@ -222,7 +222,7 @@ export const productsDummyData = [
     "_id": "67a1f7c93f34a77b6dde915a",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
     "name": "MacBook Pro 16",
-    "description": "The MacBook Pro 16, powered by Apple's M2 Pro chip, offers outstanding performance with 16GB RAM and a 512GB SSD. Whether you're editing high-resolution video, developing software, or multitasking with ease, this laptop can handle the toughest tasks. It features a stunning Retina display with True Tone technology, making it a top choice for professionals in creative industries or anyone who demands premium performance in a portable form.",
+    "description": "MacBook Pro 16, yang ditenagai oleh chip M2 Pro Apple, menawarkan kinerja luar biasa dengan RAM 16 GB dan SSD 512 GB. Baik Anda mengedit video beresolusi tinggi, mengembangkan perangkat lunak, atau melakukan banyak tugas sekaligus dengan mudah, laptop ini dapat menangani tugas terberat sekalipun. Laptop ini dilengkapi layar Retina yang memukau dengan teknologi True Tone, menjadikannya pilihan utama bagi para profesional di industri kreatif atau siapa pun yang menginginkan kinerja premium dalam bentuk portabel.",
     "price": 2799.99,
     "offerPrice": 2499.99,
     "image": [
@@ -236,7 +236,7 @@ export const productsDummyData = [
     "_id": "67a1f8363f34a77b6dde915c",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
     "name": "Sony WF-1000XM5",
-    "description": "Sony WF-1000XM5 true wireless earbuds deliver immersive sound with Hi-Res Audio and advanced noise cancellation technology. Designed for comfort and quality, they provide a stable, snug fit for a secure listening experience. Whether you're working out or traveling, these earbuds will keep you connected with the world around you while enjoying rich, clear sound.",
+    "description": "Earbud nirkabel sejati Sony WF-1000XM5 menghadirkan suara yang memukau dengan Audio Resolusi Tinggi dan teknologi peredam bising yang canggih. Dirancang untuk kenyamanan dan kualitas, earbud ini memberikan kecocokan yang stabil dan pas untuk pengalaman mendengarkan yang aman. Baik saat berolahraga maupun bepergian, earbud ini akan membuat Anda tetap terhubung dengan dunia di sekitar Anda sambil menikmati suara yang kaya dan jernih.",
     "price": 349.99,
     "offerPrice": 299.99,
     "image": [
@@ -250,7 +250,7 @@ export const productsDummyData = [
     "_id": "67a1f85e3f34a77b6dde915e",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
     "name": "Samsung Projector 4k",
-    "description": "The Samsung 4K Projector offers an immersive cinematic experience with ultra-high-definition visuals and realistic color accuracy. Equipped with a built-in speaker, it delivers rich sound quality to complement its stunning 4K resolution. Perfect for movie nights, gaming, or presentations, this projector is the ultimate choice for creating an at-home theater experience or professional setting.",
+    "description": "Proyektor Samsung 4K menawarkan pengalaman sinematik yang memukau dengan visual definisi ultra-tinggi dan akurasi warna yang realistis. Dilengkapi dengan speaker internal, proyektor ini menghasilkan kualitas suara yang kaya untuk melengkapi resolusi 4K-nya yang menakjubkan. Sempurna untuk menonton film, bermain game, atau presentasi, proyektor ini adalah pilihan terbaik untuk menciptakan pengalaman teater di rumah atau suasana profesional..",
     "price": 1699.99,
     "offerPrice": 1499.99,
     "image": [
@@ -264,7 +264,7 @@ export const productsDummyData = [
     "_id": "67a1fa4b3f34a77b6dde9166",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
     "name": "ASUS ROG Zephyrus G16",
-    "description": "The ASUS ROG Zephyrus G16 gaming laptop is powered by the Intel Core i9 processor and features an RTX 4070 GPU, delivering top-tier gaming and performance. With 16GB of RAM and a 1TB SSD, this laptop is designed for gamers who demand extreme power, speed, and storage. Equipped with a stunning 16-inch display, it's built to handle the most demanding titles and applications with ease.",
+    "description": "Laptop gaming ASUS ROG Zephyrus G16 didukung oleh prosesor Intel Core i9 dan dilengkapi GPU RTX 4070, yang menghadirkan performa dan permainan terbaik. Dengan RAM 16 GB dan SSD 1 TB, laptop ini dirancang untuk para gamer yang menginginkan daya, kecepatan, dan penyimpanan ekstrem. Dilengkapi dengan layar 16 inci yang memukau, laptop ini dibuat untuk menangani judul dan aplikasi yang paling menuntut dengan mudah.",
     "price": 2199.99,
     "offerPrice": 1999.99,
     "image": [

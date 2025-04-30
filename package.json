@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://github.com/POV-DR-ABDULLAH/QuictCart",
-
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -13,7 +12,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "next": "15.1.6",
+    "@clerk/nextjs": "^6.18.0",
+    "inngest": "^3.35.1",
+    "mongoose": "^8.14.0",
+    "next": "^15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.1"
