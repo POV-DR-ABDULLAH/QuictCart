@@ -1,56 +1,28 @@
-import { Inngest } from "inngest";
-import connectDB from "@/config/db"; // ⬅️ Diperlukan!
-import User from "@/models/User";    // ⬅️ Juga penting!
+import mongoose from 'mongoose';
 
-export const inngest = new Inngest({ id: "quickcart-next" });
+cached = global.mongoose
 
-export const syncUserCreation = inngest.createFunction(
-    {
-        id: 'sync-user-from-clerk'
-    },
-    { event: 'clerk/user.created' },
-    async ({ event }) => {
-        const { id, first_name, last_name, email_addresses, image_url } = event.data
-        const userData = {
-            _id: id,
-            email: email_addresses[0].email_addresses,
-            name : first_name + ' ' + last_name,
-            image_Url: image_url
+if (!cached) {
+    cached = global.mongoose = { conn: null , promise: null }
+}
+
+async function connectDB() {
+    if(cached.conn){
+        return cached.conn
+    }
+
+    if(!cached.promise) {
+        const opts = {
+            bufferCommands:false
         }
 
-        await connectDB()
-        await User.create(userData)
+        cached.promise = mongoose.connect(`${process.env.MONGODB_URI}/quickcart`, opts).then( mongoose = > {
+            return mongoose
+        })
     }
-)
 
-export const syncUserUpdation = inngest.createFunction(
-    {
-        id: 'update-user-from-clerk'
-    },
-    { event: 'clerk/user.updated' },
-    async ({ event }) => {
-        const { id, first_name, last_name, email_addresses, image_url } = event.data
-        const userData = {
-            _id: id,
-            email: email_addresses[0].email_addresses,
-            name : first_name + ' ' + last_name,
-            image_Url: image_url
-        }
+    cached.conn = await cached.promise
+    return cached.conn
+}
 
-        await connectDB()
-        await User.findByIdAndUpdate(id, userData)
-    }
-)
-
-export const syncUserDeletion = inngest.createFunction(
-    {
-        id: 'delete-user-from-clerk'
-    },
-    { event: 'clerk/user.deleted' },
-    async ({ event }) => {
-        const { id } = event.data
-
-        await connectDB()
-        await User.findByIdAndDelete(id)
-    }
-)
+export default connectDB
