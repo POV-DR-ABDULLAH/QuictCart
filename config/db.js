@@ -16,7 +16,7 @@ async function connectDB() {
             bufferCommands:false
         }
 
-        cached.promise = mongoose.connect(`${process.env.MONGODB_URI}/quickcart`, opts).then( mongoose = > {
+        cached.promise = mongoose.connect(`${process.env.MONGODB_URI}/quickcart`, opts).then( mongoose => {
             return mongoose
         })
     }
@@ -25,4 +25,4 @@ async function connectDB() {
     return cached.conn
 }
 
-export default connectDB
+export default connectDB;
