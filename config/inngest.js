@@ -15,9 +15,9 @@ export const syncUserCreation = inngest.createFunction(
         const { id, first_name, last_name, email_addresses, image_url } = event.data
         const userData = {
             _id: id,
-            email: email_addresses[0].email_addresses,
-            name : first_name + ' ' + last_name,
-            image_Url: image_url
+            email: (email_addresses && email_addresses[0] && email_addresses[0].email_address) ? email_addresses[0].email_address : "noemail@dummy.com",
+            name : (first_name || "") + " " + (last_name || ""),
+            imageUrl: image_url || "https://ui-avatars.com/api/?name=User"
         }
         
         await connectDB()
@@ -35,15 +35,14 @@ export const syncUserUpdation = inngest.createFunction(
         const { id, first_name, last_name, email_addresses, image_url } = event.data
         const userData = {
             _id: id,
-            email: email_addresses[0].email_addresses,
-            name : first_name + ' ' + last_name,
-            image_Url: image_url
+            email: (email_addresses && email_addresses[0] && email_addresses[0].email_address) ? email_addresses[0].email_address : "noemail@dummy.com",
+            name : (first_name || "") + " " + (last_name || ""),
+            imageUrl: image_url || "https://ui-avatars.com/api/?name=User"
         }
         
         await connectDB()
         await User.findByIdAndUpdate(id, userData)
     }
-
 )
 
 // inngest Function to deleted user data to a database 
@@ -58,6 +57,5 @@ export const syncUserDeletion = inngest.createFunction(
         await connectDB()
         await User.findByIdAndDelete(id)
     }
-
 )
 
