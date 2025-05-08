@@ -5,22 +5,40 @@ import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
 import Footer from "@/components/seller/Footer";
 import Loading from "@/components/Loading";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const ProductList = () => {
 
-  const { router } = useAppContext()
+  const { router, getToken, user } = useAppContext()
 
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
 
   const fetchSellerProduct = async () => {
-    setProducts(productsDummyData)
-    setLoading(false)
+    try {
+      const token = await getToken()
+      const { data } = await axios.get('/api/product/seller-list', {headers: {Authorization: `Bearer ${token}`}})
+      if(data.success && Array.isArray(data.products)) {
+        setProducts(data.products)
+        setLoading(false)
+      } else {
+        setProducts([])
+        setLoading(false)
+        toast.error(data.message || 'No products found')
+      }
+    } catch (error) {
+      setProducts([])
+      setLoading(false)
+      toast.error(error.message)
+    }
   }
 
   useEffect(() => {
-    fetchSellerProduct();
-  }, [])
+    if (user) {
+      fetchSellerProduct();
+    }
+  }, [user])
 
   return (
     <div className="flex-1 min-h-screen flex flex-col justify-between">
@@ -39,36 +57,40 @@ const ProductList = () => {
               </tr>
             </thead>
             <tbody className="text-sm text-gray-500">
-              {products.map((product, index) => (
-                <tr key={index} className="border-t border-gray-500/20">
-                  <td className="md:px-4 pl-2 md:pl-4 py-3 flex items-center space-x-3 truncate">
-                    <div className="bg-gray-500/10 rounded p-2">
-                      <Image
-                        src={product.image[0]}
-                        alt="product Image"
-                        className="w-16"
-                        width={1280}
-                        height={720}
-                      />
-                    </div>
-                    <span className="truncate w-full">
-                      {product.name}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 max-sm:hidden">{product.category}</td>
-                  <td className="px-4 py-3">${product.offerPrice}</td>
-                  <td className="px-4 py-3 max-sm:hidden">
-                    <button onClick={() => router.push(`/product/${product._id}`)} className="flex items-center gap-1 px-1.5 md:px-3.5 py-2 bg-orange-600 text-white rounded-md">
-                      <span className="hidden md:block">Visit</span>
-                      <Image
-                        className="h-3.5"
-                        src={assets.redirect_icon}
-                        alt="redirect_icon"
-                      />
-                    </button>
-                  </td>
-                </tr>
-              ))}
+              {Array.isArray(products) && products.length > 0 ? (
+                products.map((product, index) => (
+                  <tr key={index} className="border-t border-gray-500/20">
+                    <td className="md:px-4 pl-2 md:pl-4 py-3 flex items-center space-x-3 truncate">
+                      <div className="bg-gray-500/10 rounded p-2">
+                        <Image
+                          src={product.image[0]}
+                          alt="product Image"
+                          className="w-16"
+                          width={1280}
+                          height={720}
+                        />
+                      </div>
+                      <span className="truncate w-full">
+                        {product.name}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 max-sm:hidden">{product.category}</td>
+                    <td className="px-4 py-3">${product.offerPrice}</td>
+                    <td className="px-4 py-3 max-sm:hidden">
+                      <button onClick={() => router.push(`/product/${product._id}`)} className="flex items-center gap-1 px-1.5 md:px-3.5 py-2 bg-orange-600 text-white rounded-md">
+                        <span className="hidden md:block">Visit</span>
+                        <Image
+                          className="h-3.5"
+                          src={assets.redirect_icon}
+                          alt="redirect_icon"
+                        />
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr><td colSpan={4} className="text-center py-6">No products found.</td></tr>
+              )}
             </tbody>
           </table>
         </div>
