@@ -61,7 +61,7 @@ export const AppContextProvider = (props) => {
         } catch (error) {
             toast.error(error.message)
         }
-    } 
+    }
 
     const addToCart = async (itemId) => {
         let cartData = structuredClone(cartItems);
