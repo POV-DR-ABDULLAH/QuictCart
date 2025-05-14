@@ -1,12 +1,12 @@
 'use client'
-import { productsDummyData, userDummyData } from "@/assets/assets";
-import { useUser, useAuth } from "@clerk/nextjs";
-import axios from "axios";
-import { useRouter } from "next/navigation";
-import { createContext, useContext, useEffect, useState } from "react";
-import toast from "react-hot-toast";
+import { productsDummyData, userDummyData } from "'assets/assets'"
+import { useUser, useAuth } from "@clerk/nextjs"
+import axios from "axios"
+import { useRouter } from "next/navigation"
+import { createContext, useContext, useEffect, useState } from "react"
+import toast from "react-hot-toast"
 
-export const AppContext = createContext();
+export const AppContext = createContext()
 
 export const useAppContext = () => {
     return useContext(AppContext)
@@ -76,7 +76,7 @@ export const AppContextProvider = (props) => {
             try {
 
                 const token = await getToken()
-                await axios.post('/api/user/update', {cartData}, { headers : {Authorization: `Bearer ${token}`}})
+                await axios.put('/api/user/cart', {cartData}, { headers : {Authorization: `Bearer ${token}`}})
                 toast.success('Item added to cart')
 
             } catch (error) {
@@ -98,7 +98,7 @@ export const AppContextProvider = (props) => {
             try {
     
                 const token = await getToken()
-                await axios.post('/api/user/update', {cartData}, { headers : {Authorization: `Bearer ${token}`}})
+                await axios.put('/api/user/cart', {cartData}, { headers : {Authorization: `Bearer ${token}`}})
                 toast.success('Cart Updated')
     
             } catch (error) {
@@ -156,4 +156,3 @@ export const AppContextProvider = (props) => {
         </AppContext.Provider>
     )
 }
-
