@@ -1,5 +1,4 @@
 'use client'
-import { productsDummyData, userDummyData } from "'assets/assets'"
 import { useUser, useAuth } from "@clerk/nextjs"
 import axios from "axios"
 import { useRouter } from "next/navigation"
