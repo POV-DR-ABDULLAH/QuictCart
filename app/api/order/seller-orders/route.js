@@ -1,7 +1,7 @@
 import { connectDB } from "@/config/db";
 import { NextResponse } from "next/server";
 import { getAuth } from "@clerk/nextjs/server";
-import { authSeller } from "@/utils/authSeller"
+import { authSeller } from "@/lib/authSeller"
 import Order from "@/models/Order";
 import Address from "@/models/Address";
 
