@@ -17,19 +17,19 @@ const ProductList = () => {
 
   const fetchSellerProduct = async () => {
     try {
+
       const token = await getToken()
+
       const { data } = await axios.get('/api/product/seller-list', {headers: {Authorization: `Bearer ${token}`}})
-      if(data.success && Array.isArray(data.products)) {
+      
+      if(data.success) {
         setProducts(data.products)
         setLoading(false)
       } else {
-        setProducts([])
-        setLoading(false)
-        toast.error(data.message || 'No products found')
+        toast.error(data.message)
       }
+
     } catch (error) {
-      setProducts([])
-      setLoading(false)
       toast.error(error.message)
     }
   }

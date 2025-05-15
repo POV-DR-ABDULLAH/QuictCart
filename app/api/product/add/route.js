@@ -15,21 +15,23 @@ cloudinary.config({
 export async function POST(request) {
     try {
         const { userId } = getAuth(request);
-        if (!userId) {
-            console.error("userId is undefined! Auth failed or not logged in.");
-            return NextResponse.json({ success: false, message: "User not authenticated." }, { status: 401 });
-        }
+        
         const isSeller = await authSeller(userId);
+        
         if (!isSeller) {
-            return NextResponse.json({ success: false, message: "Not Authorized" }, { status: 401 });
+            return NextResponse.json({ success: false, message: "Not Authorized" });
         }
+
         const formData = await request.formData();
+
         const name = formData.get("name");
         const description = formData.get("description");
         const category = formData.get("category");
         const price = formData.get("price");
         const offerPrice = formData.get("offerPrice");
+
         const files = formData.getAll("images");
+
         if(!files || files.length === 0) {
             return NextResponse.json({ success: false, message: "No file uploaded" });
         }
@@ -37,6 +39,7 @@ export async function POST(request) {
             files.map(async (file) => {
                 const arrayBuffer = await file.arrayBuffer();
                 const buffer = Buffer.from(arrayBuffer);
+
                 return new Promise((resolve, reject) => {
                     const stream = cloudinary.uploader.upload_stream(
                         {resource_type: 'auto'},
