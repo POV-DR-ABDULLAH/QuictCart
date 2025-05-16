@@ -1,8 +1,9 @@
-import Address from "@/models/Address";
-import Order from "@/models/Order";
-import Product from "@/models/Product";
-import connectDB from "@/config/db";
-import { getAuth } from "@clerk/nextjs/server";
+import Address from '@/models/Address';
+import Order from '@/models/Order';
+import Product from '@/models/Product';
+import connectDB from '@/config/db';
+import { getAuth } from '@clerk/nextjs/server';
+import { NextResponse } from 'next/server';
 
 
 export async function GET(request) {
